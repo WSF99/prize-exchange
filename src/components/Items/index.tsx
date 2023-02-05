@@ -1,7 +1,7 @@
 import { ItemCard } from '@/components/ItemCard'
 import { RootObject } from '@/pages/types'
 import { useEffect, useState } from 'react'
-export function Items() {
+export const Items = () => {
   const [items, setItems] = useState<RootObject>()
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { ShoppingCart } from '@/components/ShoppingCart'
 import { useState } from 'react'
-import { Header } from '../components/Header'
+import { Header } from '../../components/Header'
 
 export default function Cart() {
   const [cartItems, getCartItems] = useState()

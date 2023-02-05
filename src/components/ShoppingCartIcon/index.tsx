@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
-export function ShoppingCartIcon(props) {
+export const ShoppingCartIcon = (props) => {
   const router = useRouter()
 
   const handleClick = () => {

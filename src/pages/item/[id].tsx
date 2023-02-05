@@ -1,5 +1,5 @@
+import { ItemDetails } from '@/components'
 import { Header } from '@/components/Header'
-import { PurchaseCard } from '@/components/PurchaseCard'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { Product } from '../types'
 
@@ -35,7 +35,7 @@ export default function Item({ itemId, item }: Props) {
       {item ? (
         <main className="flex flex-col items-center">
           <div className=" bg-gray-300 p-10 m-6 rounded-md ">
-            <PurchaseCard item={item} />
+            <ItemDetails item={item} />
           </div>
         </main>
       ) : (

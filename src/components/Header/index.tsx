@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { BsCoin } from 'react-icons/bs'
 import { FaExchangeAlt } from 'react-icons/fa'
 const saldo = 2000 // hardcoded por enquanto
-export function Header() {
+export const Header = () => {
   const router = useRouter()
   const handleClick = () => {
     router.push('/')

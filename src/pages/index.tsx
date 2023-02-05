@@ -1,5 +1,5 @@
-import { Header } from 'src/components/Header'
-import { Items } from 'src/components/Items'
+import { Header } from '@/components/Header'
+import { Items } from '@/components/Items'
 export default function Home() {
   return (
     <div className="min-h-screen bg-slate-400">

@@ -3,14 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BsCoin, BsFillCartFill } from 'react-icons/bs'
-import { Button } from './Button'
+import { Button } from '../Button'
 
-export function ItemCard(props) {
+export const ItemCard = (props) => {
   const router = useRouter()
 
   const item: Product = props?.item
   return (
-    <div className="flex flex-col ml-5 mb-5 items-center justify-between  bg-slate-50 rounded-md w-40 max-h-[260px] min-h-[260px] transition duration-200 transform ease-in hover:shadow-xl">
+    <div className="flex flex-col ml-5 mb-5 items-center justify-between  bg-slate-50 rounded-md w-full sm:w-40 max-h-[260px] min-h-[260px] transition duration-200 transform ease-in hover:shadow-xl">
       <div className="mt-2">
         <Image
           src={item?.images[0]}

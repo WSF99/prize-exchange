@@ -10,14 +10,14 @@ interface ButtonProps {
   width: number
 }
 
-export function Button({
+export const Button = ({
   text,
   color,
   textColor,
   leftComponent,
   height,
   width
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       className="flex p-1 space-x-1 justify-center items-center rounded-md transition-opacity hover:opacity-90"
