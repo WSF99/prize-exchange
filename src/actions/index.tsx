@@ -13,4 +13,8 @@ export const removeItem = (item: Product) => {
   }
 }
 
-export default { addItem, removeItem }
+export const decrementByOne = (item: Product) => {
+  return (dispatch: Dispatch) => {
+    dispatch({ type: 'DECREMENT_BY_ONE', item })
+  }
+}

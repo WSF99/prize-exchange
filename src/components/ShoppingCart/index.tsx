@@ -1,9 +1,9 @@
-import { removeItem } from '@/actions'
-import { decrementByAmount } from '@/slicers/balanceSlicer'
-import { store } from '@/store'
-import { Product } from '@/types'
 import { BsFillCartFill } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
+import { removeItem } from '../../actions'
+import { decrementByAmount } from '../../slicers/balanceSlicer'
+import { store } from '../../store'
+import { Product } from '../../types'
 import { Button } from '../Button'
 import { ShoppingCartList } from '../ShoppingCartList'
 

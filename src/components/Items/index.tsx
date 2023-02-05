@@ -1,9 +1,10 @@
-import { ItemCard } from '@/components/ItemCard'
-import { RootObject } from '@/types'
 import { useEffect, useState } from 'react'
+import { ItemCard } from '../../components/index'
+import { RootObject } from '../../types'
+
 export const Items = () => {
   const [items, setItems] = useState<RootObject>()
-
+  const fetch = require('node-fetch')
   useEffect(() => {
     handleGetItems()
   }, [])
@@ -21,7 +22,10 @@ export const Items = () => {
   return (
     <div className="flex">
       {items ? (
-        <div className="flex flex-row flex-wrap justify-center sm:justify-start p-2">
+        <div
+          role="listitem"
+          className="flex flex-row flex-wrap justify-center sm:justify-start p-2"
+        >
           {items.products.map((product) => (
             <ItemCard key={product.id} item={product} />
           ))}

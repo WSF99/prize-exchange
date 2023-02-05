@@ -1,9 +1,9 @@
-import { addItem, removeItem } from '@/actions'
-import { store } from '@/store'
-import { Product } from '@/types'
 import Image from 'next/image'
 import { BsDash, BsPlus, BsTrash } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
+import { addItem, decrementByOne, removeItem } from '../../actions'
+import { store } from '../../store'
+import { Product } from '../../types'
 
 export const ShoppingCartList = () => {
   const items: Product[] = useSelector((state) => state?.basket?.basket || [])
@@ -14,6 +14,10 @@ export const ShoppingCartList = () => {
 
   const addProduct = (item: Product) => {
     store?.dispatch(addItem(item))
+  }
+
+  const decrement = (item: Product) => {
+    store?.dispatch(decrementByOne(item))
   }
 
   return (
@@ -50,7 +54,10 @@ export const ShoppingCartList = () => {
               </td>
 
               <td className="border px-4 py-2  flex h-[160px] justify-center items-center">
-                <BsDash className="md:text-xl text-sm mr-1 cursor-pointer" />
+                <BsDash
+                  className="md:text-xl text-sm mr-1 cursor-pointer"
+                  onClick={() => decrement(product)}
+                />
                 {product?.quantity}
                 <BsPlus
                   className="text-xl cursor-pointer ml-1"

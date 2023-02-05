@@ -1,9 +1,9 @@
-import { addItem } from '@/actions'
-import { store } from '@/store'
 import { Product } from '@/types'
 import Image from 'next/image'
 import { useState } from 'react'
 import { BsCoin, BsFillCartFill } from 'react-icons/bs'
+import { addItem } from '../../actions'
+import { store } from '../../store'
 import { Button } from '../Button'
 
 export const ItemDetails = (props) => {

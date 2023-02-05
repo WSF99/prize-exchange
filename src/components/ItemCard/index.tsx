@@ -24,16 +24,24 @@ export const ItemCard = (props) => {
         {item?.title}
       </p>
       <div className="flex flex-row items-center justify-center">
-        <BsCoin className="text-yellow-500 mr-1 text-base lg:text-lg" />
+        <BsCoin
+          data-testid="coin-icon"
+          className="text-yellow-500 mr-1 text-base lg:text-lg"
+        />
         <p className="lg:text-xl text-base font-extrabold text-amber-600 ">
           {item?.price}
         </p>
       </div>
 
       <Link href="/item/[id]" as={`/item/${item.id}`}>
-        <div className="mb-1">
+        <div data-testid="buy-button" className="mb-1">
           <Button
-            leftComponent={<BsFillCartFill className="text-white" />}
+            leftComponent={
+              <BsFillCartFill
+                data-testid="shopping-cart-icon"
+                className="text-white"
+              />
+            }
             text="COMPRAR"
             textColor="white"
             color="rgb(217, 119, 6)"

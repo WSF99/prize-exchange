@@ -16,7 +16,11 @@ export const ShoppingCartIcon = (props) => {
   }
 
   return (
-    <div className="relative cursor-pointer" onClick={handleClick}>
+    <div
+      data-testid="shopping-cart-icon"
+      className="relative cursor-pointer"
+      onClick={handleClick}
+    >
       <AiOutlineShoppingCart className="text-white md:text-2xl" />
       {basket?.length > 0 && (
         <div className="absolute bg-yellow-500 lg:left-[15px] md:left-4 md:bottom-4 lg:bottom-4 rounded-full w-3 h-3 bottom-2 left-[9px] lg:w-4 lg:h-4 flex items-center justify-center">
