@@ -1,4 +1,6 @@
-import { Product } from '@/pages/types'
+import { addItem } from '@/actions'
+import { store } from '@/store'
+import { Product } from '@/types'
 import Image from 'next/image'
 import { useState } from 'react'
 import { BsCoin, BsFillCartFill } from 'react-icons/bs'
@@ -63,6 +65,7 @@ export const ItemDetails = (props) => {
             color="rgb(217, 119, 6)"
             height={60}
             width={200}
+            onClick={async () => store.dispatch(addItem(item))}
           />
         </div>
       </div>

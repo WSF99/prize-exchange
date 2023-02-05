@@ -23,7 +23,7 @@ export const Header = () => {
       <div className="flex items-center justify-end mr-2 lg:mr-4">
         <BsCoin className="text-yellow-500 text-xl" />
         <p className="text-white mr-1 lg:mr-2 ml-1 lg:text-xl">{saldo}</p>
-        <ShoppingCartIcon valor={5} />
+        <ShoppingCartIcon />
       </div>
     </div>
   )

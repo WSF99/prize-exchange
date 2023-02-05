@@ -1,7 +1,7 @@
 import { ItemDetails } from '@/components'
 import { Header } from '@/components/Header'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { Product } from '../types'
+import { Product } from '@/types'
+import { GetStaticPaths } from 'next'
 
 interface Props {
   itemId: string
@@ -18,16 +18,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const itemId = params?.id
-
   const response = await fetch(`https://dummyjson.com/products/${itemId}`)
   const data = await response.json()
 
   return { props: { itemId, item: data } }
 }
 
-export default function Item({ itemId, item }: Props) {
+export const Item = ({ itemId, item }: Props) => {
   return (
     <div className="min-h-screen bg-slate-400">
       <title>Prize Exchange</title>
@@ -44,3 +43,5 @@ export default function Item({ itemId, item }: Props) {
     </div>
   )
 }
+
+export default Item

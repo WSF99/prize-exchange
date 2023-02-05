@@ -1,3 +1,7 @@
+export interface UserState {
+  balance: number
+}
+
 export interface Product {
   id: number
   title: string

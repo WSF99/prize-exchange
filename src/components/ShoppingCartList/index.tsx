@@ -1,23 +1,9 @@
-import { RootObject } from '@/pages/types'
+import { Product } from '@/types'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 export const ShoppingCartList = () => {
-  const [items, setItems] = useState<RootObject>()
-
-  useEffect(() => {
-    handleGetItems()
-  }, [])
-
-  const handleGetItems = async () => {
-    try {
-      const response = await fetch('https://dummyjson.com/products')
-      const data = await response.json()
-      setItems(data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  const items: Product[] = useSelector((state) => state?.basket?.basket || [])
 
   return (
     <table className="table-auto w-full">
@@ -27,26 +13,36 @@ export const ShoppingCartList = () => {
           <th className="px-4 py-2 hidden md:table-cell">Marca</th>
           <th className="px-4 py-2">Produto</th>
           <th className="px-4 py-2">Preço</th>
+          <th className="px-4 py-2">Qtd</th>
         </tr>
       </thead>
       <tbody>
-        {items ? (
-          items.products.map((product) => (
-            <tr key={product.id}>
+        {items?.length > 0 ? (
+          items?.map((product, idx) => (
+            <tr key={idx}>
               <td className="border px-4 py-2 hidden md:table-cell">
-                <Image src={`${product?.images[0]}`} width={100} height={100} />
+                <Image
+                  src={`${product?.images[0]}`}
+                  width={100}
+                  height={100}
+                  alt={`${product?.title}`}
+                />
               </td>
               <td className="border px-4 py-2 hidden md:table-cell">
                 {product?.brand}
               </td>
               <td className="border px-4 py-2">{product?.title}</td>
-              <td className="border px-4 py-2">1000</td>
+              <td className="border px-4 py-2">{product?.price}</td>
+              <td className="border px-4 py-2">ss</td>
             </tr>
           ))
         ) : (
           <tr>
-            <td colSpan={4} className="border px-4 py-2">
-              Your shopping cart is empty.
+            <td
+              colSpan={5}
+              className="border px-4 py-2 text-lg text-red-600  text-center"
+            >
+              Seu carrinho de compras está vazio :(
             </td>
           </tr>
         )}

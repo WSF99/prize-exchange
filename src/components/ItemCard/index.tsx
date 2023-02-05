@@ -1,4 +1,4 @@
-import { Product } from '@/pages/types'
+import { Product } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

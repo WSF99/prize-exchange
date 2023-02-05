@@ -8,6 +8,7 @@ interface ButtonProps {
   hoverColor: string
   height: number
   width: number
+  onClick: () => {}
 }
 
 export const Button = ({
@@ -16,10 +17,12 @@ export const Button = ({
   textColor,
   leftComponent,
   height,
-  width
+  width,
+  onClick
 }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       className="flex p-1 space-x-1 justify-center items-center rounded-md transition-opacity hover:opacity-90"
       style={{
         backgroundColor: `${color}`,

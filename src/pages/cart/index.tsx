@@ -2,7 +2,7 @@ import { ShoppingCart } from '@/components/ShoppingCart'
 import { useState } from 'react'
 import { Header } from '../../components/Header'
 
-export default function Cart() {
+export const Cart = () => {
   const [cartItems, getCartItems] = useState()
   return (
     <div className="min-h-screen bg-slate-400">
@@ -16,3 +16,5 @@ export default function Cart() {
     </div>
   )
 }
+
+export default Cart
