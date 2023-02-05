@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { basketReducer } from './reducers/basketReducer'
+import balanceSlicer from './slicers/balanceSlicer'
 
 export const store = configureStore({
   reducer: {
-    basket: basketReducer
+    basket: basketReducer,
+    balance: balanceSlicer
   }
 })
 

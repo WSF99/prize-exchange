@@ -1,4 +1,4 @@
-import { Product } from '@/pages/types'
+import { Product } from '@/types'
 import { Dispatch } from 'redux'
 
 export const addItem = (item: Product) => {
