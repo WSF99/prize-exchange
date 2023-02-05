@@ -1,7 +1,6 @@
-import { ItemDetails } from '@/components'
-import { Header } from '@/components/Header'
-import { Product } from '@/types'
 import { GetStaticPaths } from 'next'
+import { Header, ItemDetails } from '../../components'
+import { Product } from '../../types'
 
 interface Props {
   itemId: string
@@ -32,7 +31,7 @@ export const Item = ({ itemId, item }: Props) => {
       <title>Prize Exchange</title>
       <Header />
       {item ? (
-        <main className="flex flex-col items-center">
+        <main data-testid="item" className="flex flex-col items-center">
           <div className=" bg-gray-300 p-10 m-6 rounded-md ">
             <ItemDetails item={item} />
           </div>

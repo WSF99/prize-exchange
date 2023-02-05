@@ -22,7 +22,9 @@
       "@reducers": ["./src/reducers"],
       "@slicers": ["./src/slicers"],
       "@styles": ["./src/styles"],
-      "@types": ["./src/types"]
+      "@types": ["./src/types"],
+      "@store": ["./src/store"],
+      "@components": ["./src/components"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

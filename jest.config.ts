@@ -1,4 +1,5 @@
 module.exports = {
+  automock: false,
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   collectCoverage: true,
   coverageProvider: 'v8',

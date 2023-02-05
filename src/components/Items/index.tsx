@@ -22,10 +22,7 @@ export const Items = () => {
   return (
     <div className="flex">
       {items ? (
-        <div
-          role="listitem"
-          className="flex flex-row flex-wrap justify-center sm:justify-start p-2"
-        >
+        <div className="flex flex-row flex-wrap justify-center sm:justify-start p-2">
           {items.products.map((product) => (
             <ItemCard key={product.id} item={product} />
           ))}

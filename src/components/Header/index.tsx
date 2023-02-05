@@ -12,7 +12,10 @@ export const Header = () => {
   const balance = useSelector((state) => state?.balance?.value)
 
   return (
-    <div className="sticky top-0 z-50 bg-slate-600 flex items-center p-1 lg:p-4 justify-between ">
+    <div
+      data-testid="header"
+      className="sticky top-0 z-50 bg-slate-600 flex items-center p-1 lg:p-4 justify-between "
+    >
       <div className="flex ml-2 items-center">
         <FaExchangeAlt
           data-testid="exchange-icon"

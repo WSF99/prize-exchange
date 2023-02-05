@@ -1,5 +1,6 @@
 import { Product } from '@/types'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { BsCoin, BsFillCartFill } from 'react-icons/bs'
 import { addItem } from '../../actions'
@@ -9,6 +10,12 @@ import { Button } from '../Button'
 export const ItemDetails = (props) => {
   const item: Product = props?.item
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const router = useRouter()
+
+  const handleClick = async (item: Product) => {
+    await store.dispatch(addItem(item))
+    router.push('/cart')
+  }
 
   return (
     <div className="flex flex-col p-2">
@@ -65,7 +72,7 @@ export const ItemDetails = (props) => {
             color="rgb(217, 119, 6)"
             height={60}
             width={200}
-            onClick={async () => store.dispatch(addItem(item))}
+            onClick={async () => handleClick(item)}
           />
         </div>
       </div>
